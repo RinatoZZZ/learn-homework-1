@@ -5,7 +5,7 @@ def age_status(age_people):
   elif 7 <= age_people <= 16:
     print('Учиться в школе')
   elif 17 <= age_people <= 23:
-    print('Учится в универе')
+    print('Учиться в универе')
   else:
     print('Работает')
 

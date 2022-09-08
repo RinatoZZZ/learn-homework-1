@@ -1,6 +1,6 @@
 
 def length_line(line1, line2):
-  if not isinstance(line1, str) and isinstance(line2, str): #задать вопрос!
+  if not isinstance(line1, str) and isinstance(line2, str):
     return '0'
   elif len(line1) == len(line2):
     return '1'
@@ -8,7 +8,6 @@ def length_line(line1, line2):
     return '2'
   elif len(line1) != len(line2) and 'learn' in line2:
     return '3'
-
 
 
 print(length_line('asf', 'asf'))
