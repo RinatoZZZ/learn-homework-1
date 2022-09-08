@@ -15,13 +15,13 @@
     
 """
 
-questions_and_answers = {"Как дела": "Хорошо!", "Что делаешь?": "Программирую"}
+questions_and_answers = {"Как дела?": "Хорошо!", "Что делаешь?": "Программирую"}
 
 def ask_user(answers_dict):
     while True:
       user_question = input('Задай мне вопрос')
-      if user_question in questions_and_answers.keys():
-        print(user_question in questions_and_answers.values())
+      if user_question in answers_dict.keys():
+        print(answers_dict[user_question])
 
       
     
