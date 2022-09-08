@@ -1,21 +1,11 @@
-"""
-
-Домашнее задание №1
-
-Цикл while: hello_user
-
-* Напишите функцию hello_user(), которая с помощью функции input() спрашивает 
-  пользователя “Как дела?”, пока он не ответит “Хорошо”
-   
-"""
+def ask_user(ask):
+  while True:
+    if ask == 'Хорошо':
+      break
+    else:
+      ask = input('Как дела?')
 
 
-def hello_user():
-    """
-    Замените pass на ваш код
-    """
-    pass
+user_answer = input('Как дела?')
+ask_user(user_answer)
 
-    
-if __name__ == "__main__":
-    hello_user()
