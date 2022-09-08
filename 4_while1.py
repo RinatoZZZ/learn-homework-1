@@ -1,11 +1,9 @@
-def ask_user(ask):
+def hello_user():
   while True:
+    ask = input('Как дела? - ')
     if ask == 'Хорошо':
       break
-    else:
-      ask = input('Как дела?')
 
 
-user_answer = input('Как дела?')
-ask_user(user_answer)
+hello_user()
 
