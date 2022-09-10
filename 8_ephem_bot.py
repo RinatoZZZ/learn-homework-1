@@ -36,39 +36,39 @@ def talk_to_me(update, context):
     planets=['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto']
     user_planet = update.message.text
     if user_planet in planets:
-      planet = ephem.Sun('2022/10/09')
+      planet = ephem.Sun(datetime.date.today())
       constellation = ephem.constellation(planet)
       update.message.reply_text(constellation)
     elif user_planet in planets:
-      planet = ephem.Moon('2022/10/09')
+      planet = ephem.Moon(datetime.date.today())
       constellation = ephem.constellation(planet)
       update.message.reply_text(constellation)
     elif user_planet in planets:
-      planet = ephem.Mercury('2022/10/09')
+      planet = ephem.Mercury(datetime.date.today())
       constellation = ephem.constellation(planet)
       update.message.reply_text(constellation)
     elif user_planet in planets:
-      planet = ephem.Venus('2022/10/09')
+      planet = ephem.Venus(datetime.date.today())
       constellation = ephem.constellation(planet)
       update.message.reply_text(constellation)
     elif user_planet in planets:
-      planet = ephem.Mars('2022/10/09')
+      planet = ephem.Mars(datetime.date.today())
       constellation = ephem.constellation(planet)
       update.message.reply_text(constellation)
     elif user_planet in planets:
-      planet = ephem.Jupiter('2022/10/09')
+      planet = ephem.Jupiter(datetime.date.today())
       constellation = ephem.constellation(planet)
       update.message.reply_text(constellation)   
     elif user_planet in planets:
-      planet = ephem.Uranus('2022/10/09')
+      planet = ephem.Uranus(datetime.date.today())
       constellation = ephem.constellation(planet)
       update.message.reply_text(constellation)
     elif user_planet in planets:
-      planet = ephem.Neptune('2022/10/09')
+      planet = ephem.Neptune(datetime.date.today())
       constellation = ephem.constellation(planet)
       update.message.reply_text(constellation)
     elif user_planet in planets:
-      planet = ephem.Pluto('2022/10/09')
+      planet = ephem.Pluto(datetime.date.today())
       constellation = ephem.constellation(planet)
       update.message.reply_text(constellation)
     else:
