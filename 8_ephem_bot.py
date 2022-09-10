@@ -13,6 +13,8 @@
 
 """
 import logging
+import ephem
+import datetime
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
@@ -21,29 +23,61 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
                     filename='bot.log')
 
 
-PROXY = {
-    'proxy_url': 'socks5://t1.learn.python.ru:1080',
-    'urllib3_proxy_kwargs': {
-        'username': 'learn',
-        'password': 'python'
-    }
-}
 
 
 def greet_user(update, context):
     text = 'Вызван /start'
     print(text)
-    update.message.reply_text(text)
+    update.message.reply_text('Привет пользователь!')
+
 
 
 def talk_to_me(update, context):
-    user_text = update.message.text
-    print(user_text)
-    update.message.reply_text(text)
+    planets=['Sun', 'Moon', 'Mercury', 'Venus', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto']
+    user_planet = update.message.text
+    if user_planet in planets:
+      planet = ephem.Sun('2022/10/09')
+      constellation = ephem.constellation(planet)
+      update.message.reply_text(constellation)
+    elif user_planet in planets:
+      planet = ephem.Moon('2022/10/09')
+      constellation = ephem.constellation(planet)
+      update.message.reply_text(constellation)
+    elif user_planet in planets:
+      planet = ephem.Mercury('2022/10/09')
+      constellation = ephem.constellation(planet)
+      update.message.reply_text(constellation)
+    elif user_planet in planets:
+      planet = ephem.Venus('2022/10/09')
+      constellation = ephem.constellation(planet)
+      update.message.reply_text(constellation)
+    elif user_planet in planets:
+      planet = ephem.Mars('2022/10/09')
+      constellation = ephem.constellation(planet)
+      update.message.reply_text(constellation)
+    elif user_planet in planets:
+      planet = ephem.Jupiter('2022/10/09')
+      constellation = ephem.constellation(planet)
+      update.message.reply_text(constellation)   
+    elif user_planet in planets:
+      planet = ephem.Uranus('2022/10/09')
+      constellation = ephem.constellation(planet)
+      update.message.reply_text(constellation)
+    elif user_planet in planets:
+      planet = ephem.Neptune('2022/10/09')
+      constellation = ephem.constellation(planet)
+      update.message.reply_text(constellation)
+    elif user_planet in planets:
+      planet = ephem.Pluto('2022/10/09')
+      constellation = ephem.constellation(planet)
+      update.message.reply_text(constellation)
+    else:
+      update.message.reply_text('Такой планеты в солнечной системы нет')
+
 
 
 def main():
-    mybot = Updater("КЛЮЧ, КОТОРЫЙ НАМ ВЫДАЛ BotFather", request_kwargs=PROXY, use_context=True)
+    mybot = Updater("5497179145:AAFq69pql94ISf02FOG3lRStZS1e4ffGIBA",  use_context=True)
 
     dp = mybot.dispatcher
     dp.add_handler(CommandHandler("start", greet_user))
